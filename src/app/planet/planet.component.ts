@@ -11,24 +11,7 @@ import {PlanetService} from '../planet.service';
 export class PlanetComponent {
   constructor(private planetService: PlanetService) {}
 
-  emptyPlanets = () : PlanetResults => ({
-    count: 0,
-    results: [{
-      climate: '',
-      diameter: '',
-      gravity: '',
-      name: '',
-      orbital_period: '',
-      population: '',
-      residents: [],
-      rotation_period: '',
-      url: '',
-      surface_water: '',
-      terrain: ''
-    }]
-  });
-
-  planets = this.emptyPlanets();
+  planets? : PlanetResults = undefined;
 
   ngOnInit() {
     this.fetchData();
