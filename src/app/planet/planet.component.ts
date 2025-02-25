@@ -11,7 +11,7 @@ import {PlanetService} from '../planet.service';
 export class PlanetComponent {
   constructor(private planetService: PlanetService) {}
 
-  planets? : PlanetResults = undefined;
+  planets? : PlanetResults;
 
   ngOnInit() {
     this.fetchData();
@@ -20,7 +20,6 @@ export class PlanetComponent {
   fetchData() {
     this.planetService.getPlanets().subscribe({
       next: (data : PlanetResults) => {
-        console.log(data.results);
         this.planets = data;
       },
       error: (error) => {
