@@ -9,7 +9,7 @@
     </tr>
   </thead>
   <tbody>
-@for (planet of planets!.results; track planet.name) {
+@for (planet of planets?.results; track planet.name) {
   <tr>
     <td>{{ planet.name }}</td>
     <td>{{ planet.climate }}</td>
